@@ -7,7 +7,7 @@
    <?php include('headtag.php');?>
 </head>
 
-<body>
+<body onload="myFunction()">
     <!-- Preloader Start Here -->
     <!-- <div id="preloader"></div> -->
     <!-- Preloader End Here -->
@@ -47,6 +47,16 @@
                                 <div class="heading-layout1">
                                     <div class="item-title">
                                         <h3>Add New Exam</h3>
+
+
+
+                                        <div  id="demo"     class="alert alert-success alert-dismissible fade show">
+       
+       
+    </div>
+                                   
+                                   
+                                   
                                     </div>
                                     <div class="dropdown">
                                         <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"
@@ -62,44 +72,23 @@
                                         </div>
                                     </div>
                                 </div>
-                                <form class="new-added-form">
+                                <form class="new-added-form" action="signup.php" method="post">
                                     <div class="row">
                                         <div class="col-12-xxxl col-lg-6 col-12 form-group">
                                             <label>Name</label>
-                                            <input type="text" placeholder="" class="form-control">
+                                            <input type="text" placeholder="" class="form-control" required>
                                         </div>
                                         <div class="col-12-xxxl col-lg-6 col-12 form-group">
                                             <label>Pincode *</label>
-                                            <select class="select2">
-                                                <option value="">Please Select</option>
-                                                <option value="1">Bangla</option>
-                                                <option value="2">English</option>
-                                                <option value="3">Mathematics</option>
-                                                <option value="3">Economics</option>
-                                                <option value="3">Chemistry</option>
-                                            </select>
+                                            <input type="text" pattern="[1-9][0-9]{5}"  class="form-control"/>
                                         </div>
                                         <div class="col-12-xxxl col-lg-6 col-12 form-group">
                                             <label>City*</label>
-                                            <select class="select2">
-                                                <option value="0">Please Select</option>
-                                                <option value="1">Play</option>
-                                                <option value="2">Nursery</option>
-                                                <option value="3">One</option>
-                                                <option value="3">Two</option>
-                                                <option value="3">Three</option>
-                                            </select>
+                                            <input type="text" placeholder="" class="form-control" required>
                                         </div>
                                         <div class="col-12-xxxl col-lg-6 col-12 form-group">
                                             <label>state</label>
-                                            <select class="select2">
-                                                <option value="0">Please Select</option>
-                                                <option value="1">A</option>
-                                                <option value="2">B</option>
-                                                <option value="3">C</option>
-                                                <option value="3">D</option>
-                                                <option value="3">E</option>
-                                            </select>
+                                            <input type="text" placeholder="" class="form-control" required>
                                         </div>
                                         <div class="col-12-xxxl col-lg-6 col-12 form-group">
                                             <label>Type of user</label>
@@ -122,19 +111,19 @@
                                         </div>
                                         <div class="col-12-xxxl col-lg-6 col-12 form-group">
                                             <label>Email</label>
-                                            <input type="text" placeholder="" class="form-control">
+                                            <input type="email" placeholder="Email"  class="form-control"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                                         </div>
                                         <div class="col-12-xxxl col-lg-6 col-12 form-group">
                                             <label>Password</label>
-                                            <input type="text" placeholder="" class="form-control">
+                                            <input type="password" placeholder="" class="form-control"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
                                         </div>
                                         <div class="col-12-xxxl col-lg-6 col-12 form-group">
                                             <label>Referral Code</label>
                                             <input type="text" placeholder="" class="form-control">
                                         </div>
                                         <div class="col-12-xxxl col-lg-6 col-12 form-group">
-                                            <label>Password</label>
-                                            <input type="text" placeholder="" class="form-control">
+                                            <label>click it</label>
+                                            <button type="button" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">checked it</button>
                                         </div>
                                         <div class="col-12 form-group mg-t-8">
                                             <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
@@ -152,6 +141,39 @@
         </div>
         <!-- Page Area End Here -->
     </div>
+    <script>
+
+function myFunction() {
+ 
+  $(document).ready(function(){
+            $("#demo").hide();
+        });
+
+}
+
+
+// function myfunction1()
+// {
+//     alert("dsfdsfs");
+// }
+
+
+
+
+function myfunction1()
+{
+   $(document).ready(function()
+   {
+       $("#demo").show();
+   });
+    document.getElementById("demo").innerHTML= "<strong>Success!</strong> Your message has been sent successfully."
+  
+}
+
+
+
+
+        </script>
     <?php include('footerscript.php');?>
 
 </body>
